@@ -1,0 +1,23 @@
+load("@rules_pycross//pycross:defs.bzl", "pycross_wheel_library")
+load("@aspect_rules_py//py:defs.bzl", "py_venv")
+
+
+pycross_wheel_library(
+    name = "setuptools1",
+    wheel = "@pip_setuptools1//file",
+)
+
+pycross_wheel_library(
+    name = "setuptools2",
+    wheel = "@pip_setuptools2//file",
+)
+
+py_venv(
+    name = "conflict",
+    location = ".",
+    venv_name = ".venv",
+    deps = [
+        "setuptools1",
+        "setuptools2",
+    ],
+)

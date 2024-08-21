@@ -1,0 +1,18 @@
+bazel_dep(name = "rules_pycross", version = "0.6.0")
+bazel_dep(name = "aspect_rules_py", version = "0.7.4")
+http_file = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_file")
+
+http_file(
+    name = "pip_setuptools1",
+    downloaded_file_path = "setuptools-73.0.1-py3-none-any.whl",
+    sha256 = "b208925fcb9f7af924ed2dc04708ea89791e24bde0d3020b27df0e116088b34e",
+    url = "https://files.pythonhosted.org/packages/07/6a/0270e295bf30c37567736b7fca10167640898214ff911273af37ddb95770/setuptools-73.0.1-py3-none-any.whl",
+)
+
+
+http_file(
+    name = "pip_setuptools2",
+    downloaded_file_path = "setuptools-73.0.0-py3-none-any.whl",
+    sha256 = "f2bfcce7ae1784d90b04c57c2802e8649e1976530bb25dc72c2b078d3ecf4864",
+    url = "https://files.pythonhosted.org/packages/09/e3/93b516fab8b8f420acc7bb75e29759d009df26c093d8de1c70993b13bf25/setuptools-73.0.0-py3-none-any.whl",
+)
